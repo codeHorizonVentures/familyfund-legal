@@ -198,7 +198,7 @@ The FamilyFund application, including its design, functionality, and code, is ow
 
 ## **6. Data and Privacy**
 
-For information about how FamilyFund collects, uses, and protects your data, please see our [**Privacy Policy**](https://docs.google.com/document/d/e/2PACX-1vSTph8IpqpMCenfuf4js6oy5r_D8SozxIOr6Bkh-JkXSOTX-kHrNcXB1pGb9ZMLREZ1g4MRxM9Acqcz/pub).
+For information about how FamilyFund collects, uses, and protects your data, please see our [**Privacy Policy**](https://familyfund.app/privacy).
 
 **Key Points:**
 
