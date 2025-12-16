@@ -1,7 +1,4 @@
----
 title: Privacy Policy
----
-
 
 # **Privacy Policy for FamilyFund**
 
