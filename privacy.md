@@ -1,3 +1,8 @@
+---
+title: Privacy Policy
+---
+
+
 # **Privacy Policy for FamilyFund**
 
 **Last Updated: December 11, 2025**
