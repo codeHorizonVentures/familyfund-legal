@@ -1,3 +1,7 @@
+---
+title: Terms of Service
+---
+
 # **Terms of Service for FamilyFund**
 
 **Last Updated: December 11, 2025**
