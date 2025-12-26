@@ -1,205 +1,189 @@
 ---
 layout: null
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
     <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
-</head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;FamilyFund - Private Family Budgeting for iOS&lt;/title&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- SEO &amp; Schema --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="description" content="Secure, iCloud-synced family finance app. Track budgets and savings together without sharing data with servers."&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script type="application/ld+json"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"@context": "https://schema.org",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"@type": "SoftwareApplication",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"name": "FamilyFund",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"operatingSystem": "iOS",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"applicationCategory": "FinanceApplication",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"author": { "@type": "Person", "name": "Petro Kulakov" }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* VARIABLES &amp; RESET */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--primary: #007AFF; /* Apple Blue */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg: #F5F5F7;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text: #1D1D1F;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-light: #86868B;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--white: #FFFFFF;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body { background: var(--bg); color: var(--text); line-height: 1.5; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* HERO SECTION */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 100px 20px 60px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #e5e5e5;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -1.5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: -webkit-linear-gradient(#1D1D1F, #4A4A4F);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 400;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* DOWNLOAD BUTTON */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.app-store-btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.app-store-btn:hover { transform: scale(1.05); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.app-store-btn img { height: 60px; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* FEATURES GRID */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.features {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1000px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 60px auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.feature-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 20px rgba(0,0,0,0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.feature-card:hover { transform: translateY(-5px); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.icon { font-size: 3rem; margin-bottom: 20px; display: block; }</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.feature-card h3 { font-size: 1.25rem; margin-bottom: 10px; font-weight: 600; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.feature-card p { color: var(--text-light); font-size: 0.95rem; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* PRIVACY BADGE */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.privacy-section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 60px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.privacy-badge {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #E8F2FF;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* FOOTER */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid #e5e5e5;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer a { color: var(--text-light); text-decoration: none; margin: 0 10px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer a:hover { color: var(--primary); text-decoration: underline; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* MOBILE OPTIMIZATION */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 600px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero h1 { font-size: 2.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero p { font-size: 1.2rem; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- HERO --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Master Family Finances.&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Budget together, save together. Securely synced via iCloud, with no external servers tracking your data.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" class="app-store-btn"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Apple's Official Badge SVG --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1702252800" alt="Download on the App Store"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FEATURES --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="features"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="feature-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="icon"&gt;🔒&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Privacy First&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Your data lives on your device and your personal iCloud. We never see your transactions.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="feature-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="icon"&gt;☁️&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;iCloud Sync&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Seamlessly sync budgets across everyone's iPhone and iPad using CloudKit.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="feature-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="icon"&gt;📊&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Premium Insights&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Export professional PDF reports and visualize spending with beautiful charts.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PRIVACY STATEMENT --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="privacy-section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="privacy-badge"&gt;SwiftData + CloudKit&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Your Data. Your Control.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="max-width: 600px; margin: 20px auto; color: #86868B;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>FamilyFund uses Apple's native frameworks to ensure your financial life stays private.<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>No logins, no tracking, no data selling.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FOOTER --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="/privacy/"&gt;Privacy Policy&lt;/a&gt; |</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="/terms/"&gt;Terms of Service&lt;/a&gt; |</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="mailto:code.horizon.ventures@gmail.com"&gt;Contact Support&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="margin-top: 20px;"&gt;&amp;copy; 2025 Petro Kulakov. "FamilyFund" is a trademark of Code Horizon Venture.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
-</body>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>FamilyFund - Private Family Budgeting for iOS</title>
+
+                <!-- SEO & Schema -->
+                <meta name="description" content="Secure, iCloud-synced family finance app. Track budgets and savings together without sharing data with servers.">
+                    <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "SoftwareApplication",
+                            "name": "FamilyFund",
+                            "operatingSystem": "iOS",
+                            "applicationCategory": "FinanceApplication",
+                            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                            "author": { "@type": "Person", "name": "Petro Kulakov" }
+                        }
+                    </script>
+
+                    <style>
+                        /* VARIABLES & RESET */
+                        :root {
+                            --primary: #007AFF; /* Apple Blue */
+                            --bg: #F5F5F7;
+                            --text: #1D1D1F;
+                            --text-light: #86868B;
+                            --white: #FFFFFF;
+                        }
+
+                        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+                        body { background: var(--bg); color: var(--text); line-height: 1.5; }
+
+                        /* HERO SECTION */
+                        .hero {
+                            text-align: center;
+                            padding: 100px 20px 60px;
+                            background: var(--white);
+                            border-bottom: 1px solid #e5e5e5;
+                        }
+
+                        .hero h1 {
+                            font-size: 3.5rem;
+                            font-weight: 700;
+                            letter-spacing: -1.5px;
+                            margin-bottom: 15px;
+                            background: -webkit-linear-gradient(#1D1D1F, #4A4A4F);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+
+                        .hero p {
+                            font-size: 1.5rem;
+                            color: var(--text-light);
+                            max-width: 600px;
+                            margin: 0 auto 40px;
+                            font-weight: 400;
+                        }
+
+                        /* DOWNLOAD BUTTON */
+                        .app-store-btn {
+                            display: inline-block;
+                            transition: transform 0.2s;
+                        }
+                        .app-store-btn:hover { transform: scale(1.05); }
+                        .app-store-btn img { height: 60px; }
+
+                        /* FEATURES GRID */
+                        .features {
+                            max-width: 1000px;
+                            margin: 60px auto;
+                            padding: 0 20px;
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                            gap: 30px;
+                        }
+
+                        .feature-card {
+                            background: var(--white);
+                            padding: 30px;
+                            border-radius: 20px;
+                            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+                            text-align: center;
+                            transition: transform 0.3s ease;
+                        }
+
+                        .feature-card:hover { transform: translateY(-5px); }
+
+                        .icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+
+                        .feature-card h3 { font-size: 1.25rem; margin-bottom: 10px; font-weight: 600; }
+                        .feature-card p { color: var(--text-light); font-size: 0.95rem; }
+
+                        /* PRIVACY BADGE */
+                        .privacy-section {
+                            text-align: center;
+                            padding: 60px 20px;
+                            background: #fff;
+                            margin-top: 40px;
+                        }
+                        .privacy-badge {
+                            background: #E8F2FF;
+                            color: var(--primary);
+                            padding: 8px 16px;
+                            border-radius: 20px;
+                            font-weight: 600;
+                            font-size: 0.9rem;
+                            display: inline-block;
+                            margin-bottom: 20px;
+                        }
+
+                        /* FOOTER */
+                        footer {
+                            text-align: center;
+                            padding: 40px;
+                            color: var(--text-light);
+                            font-size: 0.85rem;
+                            border-top: 1px solid #e5e5e5;
+                        }
+
+                        footer a { color: var(--text-light); text-decoration: none; margin: 0 10px; }
+                        footer a:hover { color: var(--primary); text-decoration: underline; }
+
+                        /* MOBILE OPTIMIZATION */
+                        @media (max-width: 600px) {
+                            .hero h1 { font-size: 2.5rem; }
+                            .hero p { font-size: 1.2rem; }
+                        }
+                    </style>
+    </head>
+    <body>
+
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Master Family Finances.</h1>
+            <p>Budget together, save together. Securely synced via iCloud, with no external servers tracking your data.</p>
+
+            <a href="#" class="app-store-btn">
+                <!-- Apple's Official Badge SVG -->
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1702252800" alt="Download on the App Store">
+            </a>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features">
+            <div class="feature-card">
+                <span class="icon">🔒</span>
+                <h3>Privacy First</h3>
+                <p>Your data lives on your device and your personal iCloud. We never see your transactions.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">☁️</span>
+                <h3>iCloud Sync</h3>
+                <p>Seamlessly sync budgets across everyone's iPhone and iPad using CloudKit.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">📊</span>
+                <h3>Premium Insights</h3>
+                <p>Export professional PDF reports and visualize spending with beautiful charts.</p>
+            </div>
+        </section>
+
+        <!-- PRIVACY STATEMENT -->
+        <section class="privacy-section">
+            <span class="privacy-badge">SwiftData + CloudKit</span>
+            <h2>Your Data. Your Control.</h2>
+            <p style="max-width: 600px; margin: 20px auto; color: #86868B;">
+            FamilyFund uses Apple's native frameworks to ensure your financial life stays private.
+            No logins, no tracking, no data selling.
+            </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <nav>
+                <a href="/privacy/">Privacy Policy</a> |
+                <a href="/terms/">Terms of Service</a> |
+                <a href="mailto:code.horizon.ventures@gmail.com">Contact Support</a>
+            </nav>
+            <p style="margin-top: 20px;">&copy; 2025 Petro Kulakov. "FamilyFund" is a trademark of Code Horizon Venture.</p>
+        </footer>
+
+    </body>
 </html>
