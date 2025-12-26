@@ -1,25 +1,92 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>{{ page.title | default: site.title }}</title>
+                <title>{{ page.title }} | {{ site.title }}</title>
                 <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+                    <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "SoftwareApplication",
+                            "name": "FamilyFund",
+                            "operatingSystem": "iOS, iPadOS",
+                            "applicationCategory": "FinanceApplication",
+                            "description": "A private, iCloud-synced family finance and budgeting app for iOS.",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Petro Kulakov"
+                            },
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "0",
+                                "priceCurrency": "USD",
+                                "availability": "https://schema.org/InStock"
+                            },
+                            "hasPart": [
+                                        {
+                                            "@type": "SoftwareApplication",
+                                            "name": "FamilyFund Premium (Monthly)",
+                                            "applicationCategory": "FinanceApplication",
+                                            "offers": {
+                                                "@type": "Offer",
+                                                "name": "Monthly Premium",
+                                                "description": "Unlock advanced insights and PDF exports (Monthly)",
+                                                "priceCurrency": "USD",
+                                                "price": "4.99",
+                                                "priceSpecification": {
+                                                    "@type": "UnitPriceSpecification",
+                                                    "price": "4.99",
+                                                    "priceCurrency": "USD",
+                                                    "unitText": "MONTH"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "@type": "SoftwareApplication",
+                                            "name": "FamilyFund Premium (Annual)",
+                                            "applicationCategory": "FinanceApplication",
+                                            "offers": {
+                                                "@type": "Offer",
+                                                "name": "Annual Premium",
+                                                "description": "Unlock advanced insights and PDF exports (Yearly)",
+                                                "priceCurrency": "USD",
+                                                "price": "29.99",
+                                                "priceSpecification": {
+                                                    "@type": "UnitPriceSpecification",
+                                                    "price": "29.99",
+                                                    "priceCurrency": "USD",
+                                                    "unitText": "YEAR"
+                                                }
+                                            }
+                                        }
+                                        ]
+                        }
+                    </script>
+
                     <style>
-                        /* Simple Professional Overrides */
+                        /* Clean Professional Styles */
                         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
                         header { text-align: center; padding-bottom: 40px; border-bottom: 1px solid #eee; margin-bottom: 40px; }
-                        h1 { font-size: 2.5em; margin-bottom: 0.2em; }
-                        .subtitle { color: #666; }
+                        h1 { font-size: 2.5em; margin-bottom: 0.2em; letter-spacing: -1px; }
+                        .subtitle { color: #666; font-size: 1.1em; }
                         footer { font-size: 0.8em; color: #888; text-align: center; margin-top: 60px; border-top: 1px solid #eee; padding-top: 20px; }
                         a { color: #007bff; text-decoration: none; }
                         a:hover { text-decoration: underline; }
+                        /* Add spacing for lists in legal docs */
+                        ul { margin-bottom: 20px; }
+                        li { margin-bottom: 8px; }
                     </style>
     </head>
     <body>
         <header>
-            <h1>{{ site.title }}</h1>
+            <h1><a href="/" style="color: inherit; text-decoration: none;">{{ site.title }}</a></h1>
             <p class="subtitle">{{ site.description }}</p>
+            <nav>
+                <a href="/privacy">Privacy Policy</a> |
+                <a href="/terms">Terms of Service</a>
+            </nav>
         </header>
 
         <main>
@@ -27,7 +94,8 @@
         </main>
 
         <footer>
-            <p>&copy; 2025 FamilyFund. All rights reserved.</p>
+            <p>&copy; 2025 Petro Kulakov. All rights reserved.</p>
+            <p>FamilyFund is a trademark of Code Horizon Venture.</p>
         </footer>
     </body>
 </html>
