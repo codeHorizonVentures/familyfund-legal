@@ -61,6 +61,8 @@ You may NOT:
 
 - Use the app in violation of applicable law or Apple platform rules
 
+You must also comply with any applicable third-party terms when using FamilyFund, including Apple account terms and the terms governing any third-party services accessed through the app.
+
 ***
 
 
@@ -197,6 +199,8 @@ TO THE MAXIMUM EXTENT PERMITTED BY LAW, FAMILYFUND IS PROVIDED "AS IS" AND "AS A
 
 To the extent mandatory consumer law in your jurisdiction gives you rights or guarantees that cannot be excluded, those rights are not waived by these Terms.
 
+If FamilyFund fails to conform to an applicable warranty, you may notify Apple, and Apple may refund the purchase price paid for the app to the extent required under Apple's policies or applicable law. To the maximum extent permitted by law, Apple has no other warranty obligation with respect to FamilyFund.
+
 ***
 
 
@@ -214,6 +218,8 @@ Nothing in these Terms excludes or limits liability that cannot be excluded unde
 ## **11. Product Claims and Legal Compliance**
 
 We, not Apple, are responsible for addressing claims relating to the app, including claims under consumer protection, privacy, or similar laws, and claims that the app infringes third-party intellectual property rights, to the extent applicable.
+
+You represent that you are not located in a country or region subject to a U.S. government embargo, and that you are not listed on any U.S. government list of prohibited or restricted parties, to the extent such representations are required under Apple's platform rules and applicable export-control laws.
 
 ***
 
@@ -240,7 +246,15 @@ If you are a consumer in the EU/EEA, UK, or another jurisdiction with mandatory 
 
 If you have questions about these Terms, contact:
 
+**Name:** Petro Kulakov
+
+**Public Address / P.O. Box:** Rua Antas 12
+
+**Public Phone:** +351930694202
+
 **Email:** support@familyfund.app
+
+If public trader contact details are displayed for FamilyFund on the applicable App Store listing or otherwise required by law, those details form part of FamilyFund's public contact information.
 
 ***
 

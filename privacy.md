@@ -13,9 +13,11 @@ permalink: /privacy/
 
 FamilyFund ("we," "us," "our," or "App") is a budgeting and expense-tracking app for Apple devices.
 
+For privacy and data protection purposes, FamilyFund is operated by **Petro Kulakov**.
+
 This Privacy Policy explains how we process information when you use FamilyFund, contact support, or purchase premium features through Apple platforms.
 
-FamilyFund is designed so that your financial records stay on your device and, if you enable sync, in your personal iCloud account. We do not operate our own backend for storing your financial ledger.
+FamilyFund is designed so that your financial records stay on your device and, if you enable sync, in your personal iCloud account using Apple's iCloud and CloudKit infrastructure. FamilyFund does not operate its own backend for storing your financial ledger.
 
 ***
 
@@ -40,7 +42,7 @@ This data is:
 
 - **Synced to your personal iCloud account** if you enable iCloud sync (using CloudKit)
 
-- **Not stored on our own backend servers**
+- **Stored locally on your device or, if sync is enabled, in Apple's iCloud/CloudKit infrastructure rather than on a FamilyFund-operated backend**
 
 
 ### **2.2 Subscription Data (StoreKit)**
@@ -120,9 +122,9 @@ We use data only for the purposes needed to operate the app and support users.
 - This data benefits from Apple device security features, including device-level encryption and access controls
 
 
-### **4.3 No FamilyFund Backend for Ledger Storage**
+### **4.3 No FamilyFund-Operated Ledger Backend**
 
-FamilyFund does not maintain its own backend server for storing your transaction history, budgets, or categories.
+FamilyFund does not operate its own backend server for storing your transaction history, budgets, or categories. When sync is enabled, storage is handled through Apple's iCloud and CloudKit services.
 
 ***
 
@@ -188,9 +190,9 @@ FamilyFund does not integrate advertising SDKs or third-party analytics SDKs for
 
 - **Subscription Status used by the app:** Kept only as long as needed to determine access to premium features
 
-- **Support Emails and Attachments:** Kept for as long as reasonably necessary to respond to your request and manage follow-up, unless a longer period is required by law or needed for an ongoing dispute
+- **Support Emails and Attachments:** Kept for up to 12 months after the last support interaction, unless a longer period is required by law or needed for an ongoing dispute
 
-- **Optional Diagnostics sent with support requests:** Kept only as long as needed to investigate the issue
+- **Optional Diagnostics sent with support requests:** Kept only as long as needed to investigate the issue and normally no longer than the related support case retention period
 
 Deleting the app removes local on-device data, but it may not automatically remove data stored in your iCloud account or information already contained in support emails you previously sent.
 
@@ -229,6 +231,12 @@ We may update this Privacy Policy from time to time to reflect legal, technical,
 
 If you have questions about this Privacy Policy or your privacy rights, contact:
 
+**Name:** Petro Kulakov
+
+**Public Address / P.O. Box:** Rua Antas 12
+
+**Public Phone:** +351930694202
+
 **Email:** support@familyfund.app
 
 ***
@@ -243,6 +251,10 @@ Where applicable, we process personal data under one or more valid legal bases, 
 - Legitimate interests in supporting, securing, and improving the app
 
 - Your consent where you voluntarily choose to send optional diagnostic material
+
+Some service providers connected to the app or to support communications, including Apple, email providers, and the exchange-rate service used by the app, may process data outside your country or outside the EU/EEA. Where applicable, their own legal transfer mechanisms, safeguards, and privacy policies apply to that processing.
+
+FamilyFund does not use automated decision-making or profiling that produces legal or similarly significant effects about you.
 
 If you are in the EU/EEA, UK, or another jurisdiction with similar rights, you may also lodge a complaint with your local data protection authority.
 
