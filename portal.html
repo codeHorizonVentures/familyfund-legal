@@ -1,0 +1,901 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FamilyFund Portal</title>
+    <meta
+        name="description"
+        content="FamilyFund portal for support, private family budgeting guidance, iCloud sync, subscriptions, exports, and App Store help."
+    >
+    <style>
+        :root {
+            --ink: #12233f;
+            --muted: #64748b;
+            --line: #d8e1ee;
+            --paper: #ffffff;
+            --mist: #eef5fb;
+            --blue: #1f7aff;
+            --blue-deep: #1154c1;
+            --mint: #def6eb;
+            --mint-ink: #0d6a4a;
+            --shadow: 0 24px 48px rgba(18, 35, 63, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.6;
+            background:
+                radial-gradient(circle at top left, #f7fbff 0%, #eff5fb 45%, #e8eef7 100%);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .shell {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(16px);
+            background: rgba(239, 245, 251, 0.88);
+            border-bottom: 1px solid rgba(216, 225, 238, 0.95);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            color: var(--paper);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--blue) 0%, #4ea3ff 100%);
+            box-shadow: 0 10px 24px rgba(31, 122, 255, 0.24);
+        }
+
+        .brand-copy strong {
+            display: block;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .brand-copy span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.83rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.94rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .hero {
+            padding: 52px 0 28px;
+        }
+
+        .hero-panel {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 24px;
+            padding: 34px;
+            border: 1px solid rgba(216, 225, 238, 0.95);
+            border-radius: 28px;
+            background: linear-gradient(150deg, rgba(255, 255, 255, 0.97) 0%, rgba(247, 251, 255, 0.96) 100%);
+            box-shadow: var(--shadow);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: var(--mint);
+            color: var(--mint-ink);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 16px 0 14px;
+            font-size: clamp(2.4rem, 4.2vw, 4rem);
+            line-height: 0.95;
+            letter-spacing: -0.045em;
+        }
+
+        .hero p {
+            margin: 0;
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 26px;
+        }
+
+        .button,
+        .button-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 0 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+
+        .button {
+            color: var(--paper);
+            background: linear-gradient(135deg, var(--blue) 0%, #4ea3ff 100%);
+            box-shadow: 0 14px 28px rgba(31, 122, 255, 0.22);
+            border: 0;
+            cursor: pointer;
+        }
+
+        .button-secondary {
+            color: var(--ink);
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid var(--line);
+        }
+
+        .button:hover,
+        .button-secondary:hover {
+            transform: translateY(-1px);
+        }
+
+        .hero-side {
+            display: grid;
+            gap: 14px;
+            align-content: start;
+        }
+
+        .signal-card {
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.88);
+        }
+
+        .signal-card strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.98rem;
+        }
+
+        .signal-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .search-wrap {
+            margin-top: 26px;
+        }
+
+        .search-label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .search-box input {
+            width: 100%;
+            min-height: 56px;
+            padding: 0 18px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.94);
+            color: var(--ink);
+            font-size: 1rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: rgba(31, 122, 255, 0.5);
+            box-shadow: 0 0 0 4px rgba(31, 122, 255, 0.1);
+        }
+
+        .empty-state {
+            display: none;
+            margin-top: 16px;
+            padding: 16px 18px;
+            border: 1px dashed var(--line);
+            border-radius: 16px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.74);
+        }
+
+        .section {
+            margin: 26px 0;
+            padding: 28px;
+            border: 1px solid rgba(216, 225, 238, 0.95);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.93);
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.55rem;
+            letter-spacing: -0.03em;
+        }
+
+        .section-header p {
+            margin: 0;
+            max-width: 640px;
+            color: var(--muted);
+        }
+
+        .guide-grid,
+        .release-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .guide-card,
+        .release-card {
+            display: block;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            text-decoration: none;
+            transition: border-color 0.18s ease, transform 0.18s ease;
+        }
+
+        .guide-card:hover,
+        .release-card:hover {
+            border-color: rgba(31, 122, 255, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .guide-card span,
+        .release-tag {
+            display: inline-flex;
+            margin-bottom: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--mist);
+            color: var(--blue-deep);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .guide-card h3,
+        .release-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.02rem;
+        }
+
+        .guide-card p,
+        .release-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            overflow: hidden;
+            background: #fbfdff;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 18px;
+            border: 0;
+            background: transparent;
+            color: var(--ink);
+            font: inherit;
+            font-weight: 700;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .faq-question:hover {
+            background: rgba(239, 245, 251, 0.72);
+        }
+
+        .faq-toggle {
+            color: var(--blue);
+            font-size: 1rem;
+            font-weight: 800;
+            transition: transform 0.18s ease;
+        }
+
+        .faq-item.is-open .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 18px 18px;
+            color: var(--muted);
+        }
+
+        .faq-item.is-open .faq-answer {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin: 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 18px;
+        }
+
+        .contact-panel,
+        .contact-form {
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+        }
+
+        .contact-panel h3,
+        .contact-form h3 {
+            margin: 0 0 12px;
+            font-size: 1.08rem;
+        }
+
+        .contact-panel p,
+        .contact-form p {
+            margin: 0 0 16px;
+            color: var(--muted);
+        }
+
+        .contact-points {
+            display: grid;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .contact-point {
+            padding: 14px;
+            border-radius: 16px;
+            background: var(--mist);
+        }
+
+        .contact-point strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+
+        .contact-point span,
+        .contact-point a {
+            color: var(--muted);
+            font-size: 0.92rem;
+            text-decoration: none;
+        }
+
+        .form-grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            font: inherit;
+            color: var(--ink);
+            background: #ffffff;
+        }
+
+        textarea {
+            min-height: 136px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: rgba(31, 122, 255, 0.5);
+            box-shadow: 0 0 0 4px rgba(31, 122, 255, 0.1);
+        }
+
+        .contact-note {
+            margin-top: 12px;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        footer {
+            padding: 34px 0 50px;
+            color: var(--muted);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(216, 225, 238, 0.95);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue);
+        }
+
+        @media (max-width: 920px) {
+            .hero-panel,
+            .guide-grid,
+            .release-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header,
+            .footer-grid,
+            .nav {
+                align-items: start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .shell {
+                width: min(100% - 20px, 1120px);
+            }
+
+            .hero {
+                padding-top: 24px;
+            }
+
+            .hero-panel,
+            .section {
+                padding: 20px;
+                border-radius: 22px;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="shell nav">
+            <a class="brand" href="/">
+                <div class="brand-mark">F</div>
+                <div class="brand-copy">
+                    <strong>FamilyFund</strong>
+                    <span>Support and subscription portal</span>
+                </div>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="/">Home</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="https://apps.apple.com/app/id6657954717">App Store</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-panel">
+                <div>
+                    <div class="eyebrow">Family budget help</div>
+                    <h1>Know what is safe to spend this month.</h1>
+                    <p>
+                        FamilyFund helps families stay in control of monthly budgets, category limits,
+                        and private finance data stored on device and in personal iCloud. This portal
+                        keeps help, billing, privacy, and subscription answers in one place.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button" href="mailto:support@familyfund.app?subject=FamilyFund%20Support">
+                            Email support
+                        </a>
+                        <a class="button-secondary" href="https://apps.apple.com/app/id6657954717">
+                            Open App Store
+                        </a>
+                    </div>
+                    <div class="search-wrap">
+                        <label class="search-label" for="searchInput">Search help, privacy, sync, billing, exports, and premium topics</label>
+                        <div class="search-box">
+                            <input
+                                id="searchInput"
+                                type="text"
+                                placeholder="Search monthly budget, iCloud sync, premium, cancel..."
+                            >
+                        </div>
+                        <div class="empty-state" id="emptyState">
+                            No matches yet. Try <strong>iCloud</strong>, <strong>premium</strong>,
+                            <strong>cancel</strong>, or <strong>privacy</strong>.
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-side">
+                    <div class="signal-card searchable" data-search="monthly budget family spending safe to spend categories planner control">
+                        <strong>Monthly control first</strong>
+                        <p>Track real-life categories, set clear limits, and review how much room is left this month.</p>
+                    </div>
+                    <div class="signal-card searchable" data-search="privacy private by design iCloud cloudkit on device data secure">
+                        <strong>Private by design</strong>
+                        <p>Your ledger stays on device and, when enabled, in your own iCloud account using Apple's infrastructure.</p>
+                    </div>
+                    <div class="signal-card searchable" data-search="premium annual monthly subscription export pdf csv app store billing">
+                        <strong>Annual-first premium value</strong>
+                        <p>Premium is built around higher-value workflows, while Apple shows the live plan pricing and any available offers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="guides">
+            <div class="section-header">
+                <div>
+                    <h2>Quick guides</h2>
+                    <p>Start with the core jobs FamilyFund is designed to solve.</p>
+                </div>
+            </div>
+            <div class="guide-grid">
+                <a class="guide-card searchable" href="#faq-monthly" data-search="monthly budget family budget categories safe to spend planning limit">
+                    <span>Monthly budget</span>
+                    <h3>Set category limits and stay on track</h3>
+                    <p>Use FamilyFund as a family budget planner first: organize spending by category and understand what is still safe to spend.</p>
+                </a>
+                <a class="guide-card searchable" href="#faq-privacy" data-search="privacy private on device iCloud cloudkit data backend">
+                    <span>Private by design</span>
+                    <h3>Understand where your data lives</h3>
+                    <p>FamilyFund does not run its own ledger backend. The app stores data on device and, if enabled, in your personal iCloud account.</p>
+                </a>
+                <a class="guide-card searchable" href="#faq-premium" data-search="premium annual monthly subscription export pdf csv intro offer billing">
+                    <span>Premium and billing</span>
+                    <h3>Choose the plan that fits your workflow</h3>
+                    <p>Monthly is the flexible option. Annual is the stronger long-term value plan, with Apple handling live pricing and eligibility.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="section-header">
+                <div>
+                    <h2>Frequently asked questions</h2>
+                    <p>Accurate answers for the current app, privacy model, and App Store subscription flow.</p>
+                </div>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item searchable" id="faq-monthly" data-search="what is familyfund for family budget monthly budget category limits safe to spend">
+                    <button class="faq-question" type="button">
+                        <span>What is FamilyFund best for?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>FamilyFund is positioned first as a family budget app: track spending by category, plan monthly limits, and understand what is still safe to spend before the month gets away from you.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item searchable" id="faq-privacy" data-search="where is my data stored iCloud cloudkit private on device backend">
+                    <button class="faq-question" type="button">
+                        <span>Where is my financial data stored?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your data is stored locally on your device. If you enable sync, FamilyFund uses Apple's iCloud and CloudKit infrastructure tied to your own Apple account. FamilyFund does not run a separate backend for storing your financial ledger.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item searchable" data-search="can familyfund see sell share transactions privacy data">
+                    <button class="faq-question" type="button">
+                        <span>Can FamilyFund see or sell my transactions?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. FamilyFund does not sell your personal data and does not operate a FamilyFund-hosted ledger backend for your transactions. Apple services such as CloudKit and StoreKit still process data for sync and billing as described in the privacy policy.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item searchable" id="faq-premium" data-search="premium subscription annual monthly reports csv pdf categories billing">
+                    <button class="faq-question" type="button">
+                        <span>What does Premium include?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Premium unlocks higher-value workflows such as export-focused features and premium capabilities made available in the app. Apple shows the live monthly and annual plans, current pricing, and any available introductory offers directly in the purchase flow.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item searchable" data-search="annual monthly plan best value subscription yearly pricing">
+                    <button class="faq-question" type="button">
+                        <span>Which plan should I choose?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If you expect to use FamilyFund as your main monthly budget tool, annual is usually the best value. Monthly is the lighter commitment option if you want more flexibility. The App Store always shows the final live billing terms before purchase.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item searchable" data-search="cancel subscription refund app store apple billing settings">
+                    <button class="faq-question" type="button">
+                        <span>How do I cancel or request a refund?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Subscriptions are billed by Apple. You can manage or cancel your plan in your Apple Account subscription settings. Refund requests are also handled by Apple through its billing support flow.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item searchable" data-search="currency conversion rates exchange rate online service">
+                    <button class="faq-question" type="button">
+                        <span>Why does currency conversion use an online service?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>FamilyFund requests exchange-rate data from an external rate service so the app can convert values when needed. The app does not intentionally send your full transaction ledger to that service.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item searchable" data-search="support email screenshot bug issue contact help">
+                    <button class="faq-question" type="button">
+                        <span>How should I contact support?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Email <a href="mailto:support@familyfund.app">support@familyfund.app</a> with a short description of the issue, what you expected to happen, and any screenshots that make the problem easier to reproduce.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="release-focus">
+            <div class="section-header">
+                <div>
+                    <h2>Current release focus</h2>
+                    <p>The portal now follows the same product story used across the App Store listing and subscription flow.</p>
+                </div>
+            </div>
+            <div class="release-grid">
+                <div class="release-card searchable" data-search="release monthly budget safe to spend summary family control">
+                    <div class="release-tag">Message</div>
+                    <h3>Monthly control is the main promise</h3>
+                    <p>The default story is no longer generic budgeting. FamilyFund leads with safe-to-spend clarity, category planning, and family spending control.</p>
+                </div>
+                <div class="release-card searchable" data-search="release privacy iCloud cloudkit on device">
+                    <div class="release-tag">Privacy</div>
+                    <h3>Private-by-design wording is aligned</h3>
+                    <p>The portal, privacy policy, and support answers now clearly explain that storage is on device and in your personal iCloud account when sync is enabled.</p>
+                </div>
+                <div class="release-card searchable" data-search="release premium annual monthly app store billing intro offers">
+                    <div class="release-tag">Premium</div>
+                    <h3>Premium language matches Apple billing</h3>
+                    <p>The portal describes Apple-managed billing correctly and avoids unsupported claims like priority support or fake direct-refund promises.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-header">
+                <div>
+                    <h2>Contact support</h2>
+                    <p>Use the email route below if you need help with sync, billing questions, exports, or product issues.</p>
+                </div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-panel searchable" data-search="support email privacy terms app store contact billing">
+                    <h3>Support channels</h3>
+                    <p>FamilyFund support is handled by email so you can include screenshots and issue details in one message.</p>
+                    <div class="contact-points">
+                        <div class="contact-point">
+                            <strong>Support email</strong>
+                            <a href="mailto:support@familyfund.app">support@familyfund.app</a>
+                        </div>
+                        <div class="contact-point">
+                            <strong>Privacy policy</strong>
+                            <a href="/privacy/">familyfund.app/privacy</a>
+                        </div>
+                        <div class="contact-point">
+                            <strong>Terms of service</strong>
+                            <a href="/terms/">familyfund.app/terms</a>
+                        </div>
+                        <div class="contact-point">
+                            <strong>App Store billing</strong>
+                            <a href="https://support.apple.com/billing">Apple billing and refunds</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <h3>Compose a support email</h3>
+                    <p>This opens your mail app with the support details prefilled.</p>
+                    <div class="form-grid">
+                        <div>
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" required>
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" required>
+                        </div>
+                        <div>
+                            <label for="subject">Subject</label>
+                            <input id="subject" name="subject" type="text" placeholder="Sync issue, billing question, export problem..." required>
+                        </div>
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                    </div>
+                    <div class="hero-actions" style="margin-top: 18px;">
+                        <button class="button" type="submit">Open support email</button>
+                    </div>
+                    <div class="contact-note">
+                        Include screenshots, device model, iOS version, and the steps that led to the problem if you want faster troubleshooting.
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="shell footer-grid">
+            <div>
+                <strong>FamilyFund</strong><br>
+                <span>Private family budgeting for Apple devices.</span>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="mailto:support@familyfund.app">Email support</a>
+                <a href="https://apps.apple.com/app/id6657954717">App Store</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const searchableItems = Array.from(document.querySelectorAll(".searchable"));
+        const emptyState = document.getElementById("emptyState");
+        const faqItems = Array.from(document.querySelectorAll(".faq-item"));
+
+        faqItems.forEach((item) => {
+            const trigger = item.querySelector(".faq-question");
+            trigger.addEventListener("click", () => {
+                item.classList.toggle("is-open");
+            });
+        });
+
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            searchableItems.forEach((item) => {
+                const haystack = (item.dataset.search || item.textContent).toLowerCase();
+                const isMatch = query === "" || haystack.includes(query);
+                item.style.display = isMatch ? "" : "none";
+                if (isMatch) {
+                    visibleCount += 1;
+                }
+            });
+
+            emptyState.style.display = visibleCount === 0 ? "block" : "none";
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            const body = [
+                `Name: ${name}`,
+                `Email: ${email}`,
+                "",
+                message
+            ].join("\n");
+
+            window.location.href =
+                `mailto:support@familyfund.app?subject=${encodeURIComponent("FamilyFund Support: " + subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+</html>
