@@ -225,10 +225,11 @@ layout: null
             font-weight: 600;
         }
 
-        .phone-stage {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .screen-stage {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 16px;
+            align-items: start;
             min-height: 520px;
             padding: 18px;
             border-radius: 26px;
@@ -239,102 +240,35 @@ layout: null
             border: 1px solid rgba(216, 225, 238, 0.95);
         }
 
-        .phone {
-            width: min(320px, 100%);
-            padding: 14px;
-            border-radius: 38px;
-            background: linear-gradient(180deg, #0d1728 0%, #1c2c45 100%);
-            box-shadow: 0 32px 52px rgba(18, 35, 63, 0.18);
-        }
-
-        .screen {
-            padding: 18px 16px 16px;
-            border-radius: 28px;
-            background: linear-gradient(180deg, #fbfdff 0%, #f3f7fb 100%);
+        .screen-card {
             overflow: hidden;
+            border: 1px solid rgba(216, 225, 238, 0.95);
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 24px 44px rgba(18, 35, 63, 0.12);
         }
 
-        .status-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 18px;
-            color: var(--muted);
-            font-size: 0.82rem;
-            font-weight: 700;
+        .screen-card--main {
+            transform: rotate(-3deg) translateY(18px);
         }
 
-        .hero-card {
-            padding: 16px;
-            border-radius: 22px;
-            color: var(--paper);
-            background: linear-gradient(135deg, var(--blue) 0%, #4da2ff 100%);
-            box-shadow: 0 16px 28px rgba(31, 122, 255, 0.2);
+        .screen-card--top {
+            transform: rotate(3deg);
         }
 
-        .hero-card span {
-            display: inline-flex;
-            padding: 5px 9px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.18);
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
+        .screen-card--bottom {
+            transform: rotate(1.5deg);
         }
 
-        .hero-card strong {
+        .screen-card img {
             display: block;
-            margin-top: 10px;
-            font-size: 1.18rem;
-            line-height: 1.1;
+            width: 100%;
+            height: auto;
         }
 
-        .hero-card p {
-            margin: 8px 0 0;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.88rem;
-        }
-
-        .mini-grid {
+        .screen-stack {
             display: grid;
-            gap: 12px;
-            margin-top: 14px;
-        }
-
-        .mini-card {
-            padding: 14px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.86);
-        }
-
-        .mini-card strong {
-            display: block;
-            margin-bottom: 4px;
-            font-size: 0.9rem;
-        }
-
-        .mini-card p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 0.84rem;
-        }
-
-        .budget-bar {
-            margin-top: 10px;
-            height: 10px;
-            border-radius: 999px;
-            background: #dce6f4;
-            overflow: hidden;
-        }
-
-        .budget-bar > span {
-            display: block;
-            height: 100%;
-            width: 64%;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #45a5ff 0%, #1f7aff 100%);
+            gap: 16px;
         }
 
         .section {
@@ -530,6 +464,10 @@ layout: null
                 grid-template-columns: 1fr;
             }
 
+            .screen-stage {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .section-header,
             .footer-grid,
             .nav {
@@ -555,6 +493,16 @@ layout: null
             .hero h1,
             .closing-panel h2 {
                 font-size: 2.28rem;
+            }
+
+            .screen-stage {
+                grid-template-columns: 1fr;
+            }
+
+            .screen-card--main,
+            .screen-card--top,
+            .screen-card--bottom {
+                transform: none;
             }
 
             .nav-links {
@@ -605,34 +553,16 @@ layout: null
                         <div class="meta-pill">Apple-managed premium billing</div>
                     </div>
                 </div>
-                <div class="phone-stage">
-                    <div class="phone" aria-hidden="true">
-                        <div class="screen">
-                            <div class="status-row">
-                                <span>9:41</span>
-                                <span>FamilyFund</span>
-                            </div>
-                            <div class="hero-card">
-                                <span>Monthly budget</span>
-                                <strong>EUR 420 still safe to spend</strong>
-                                <p>Food, housing, kids, bills, and day-to-day family spending in one monthly view.</p>
-                            </div>
-                            <div class="mini-grid">
-                                <div class="mini-card">
-                                    <strong>Housing</strong>
-                                    <p>EUR 1,180 of EUR 1,450 used</p>
-                                    <div class="budget-bar"><span style="width:81%"></span></div>
-                                </div>
-                                <div class="mini-card">
-                                    <strong>Food</strong>
-                                    <p>EUR 420 of EUR 620 used</p>
-                                    <div class="budget-bar"><span style="width:68%"></span></div>
-                                </div>
-                                <div class="mini-card">
-                                    <strong>Private by design</strong>
-                                    <p>Your data stays on device and in your own iCloud account when sync is enabled.</p>
-                                </div>
-                            </div>
+                <div class="screen-stage" aria-hidden="true">
+                    <div class="screen-card screen-card--main">
+                        <img src="/assets/screens/safe-to-spend.png" alt="">
+                    </div>
+                    <div class="screen-stack">
+                        <div class="screen-card screen-card--top">
+                            <img src="/assets/screens/control-categories.png" alt="">
+                        </div>
+                        <div class="screen-card screen-card--bottom">
+                            <img src="/assets/screens/private-by-design.png" alt="">
                         </div>
                     </div>
                 </div>
