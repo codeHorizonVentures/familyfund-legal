@@ -6,85 +6,98 @@ permalink: /privacy/
 
 # **Privacy Policy for FamilyFund**
 
-**Last Updated: December 11, 2025**
+**Last Updated: March 23, 2026**
 
 
 ## **1. Introduction**
 
-FamilyFund ("we," "us," "our," or "App") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our iOS application.
+FamilyFund ("we," "us," "our," or "App") is a budgeting and expense-tracking app for Apple devices.
 
-By downloading, installing, or using FamilyFund, you agree to this Privacy Policy. If you do not agree with our practices, please do not use the App.
+This Privacy Policy explains how we process information when you use FamilyFund, contact support, or purchase premium features through Apple platforms.
+
+FamilyFund is designed so that your financial records stay on your device and, if you enable sync, in your personal iCloud account. We do not operate our own backend for storing your financial ledger.
 
 ***
 
 
-## **2. Data We Collect**
+## **2. Data We Process**
 
 ### **2.1 Financial Data**
 
-FamilyFund allows you to log transactions, create budgets, and track expenses. This financial data is:
+When you use FamilyFund, the app processes the financial information you choose to enter, such as:
 
-- **Stored exclusively on your device** (locally via SwiftData)
+- Transactions
 
-- **Synced securely to your personal iCloud account** (via CloudKit)
+- Budgets and category limits
 
-- **Never transmitted to our servers or any third-party service**
+- Categories and related settings
 
+- App preferences related to your budgeting workflow
 
-### **2.2 Subscription Data (StoreKit 2)**
+This data is:
 
-When you subscribe to FamilyFund Premium:
+- **Stored locally on your device** (using SwiftData)
 
-- Apple processes your payment directly using StoreKit 2
+- **Synced to your personal iCloud account** if you enable iCloud sync (using CloudKit)
 
-- We receive anonymous transaction validation data from Apple (transaction ID, subscription status)
-
-- **We do not collect or store your credit card information, billing address, or personal identity details**
-
-- Payment processing is handled entirely by Apple Inc.
+- **Not stored on our own backend servers**
 
 
-### **2.3 Diagnostic and Crash Data (Optional)**
+### **2.2 Subscription Data (StoreKit)**
 
-If you enable diagnostics (optional):
+If you subscribe to FamilyFund Premium:
 
-- App crash reports
+- Apple processes your payment directly using the App Store and StoreKit
 
-- Feature usage statistics (aggregated, non-identifiable)
+- The app receives subscription-related status information from Apple, such as product identifiers, transaction identifiers, and entitlement status
 
-- Device type and OS version
-
-- This data is used solely to improve app stability and performance
+- **We do not receive your full payment card details or billing address from Apple**
 
 
-### **2.4 Data We Do NOT Collect**
+### **2.3 Currency Conversion Requests**
 
-FamilyFund does NOT collect:
+If you use features that require exchange-rate data, the app requests rates from `open.er-api.com`.
 
-- Email addresses or usernames (unless you voluntarily provide them in notes)
+These requests may include:
 
-- Location data
+- Base or target currency codes requested by the app
 
-- Contact list information
+- Ordinary network metadata handled by the service or your network provider, such as IP address, headers, and timing information
 
-- Biometric data
+We do not intentionally send your full transaction ledger to that service.
 
-- Browsing history
 
-- Any personally identifiable information for tracking or marketing
+### **2.4 Support Communications and Optional Diagnostics**
+
+If you contact us for support, we may process the information you choose to send, such as:
+
+- Email messages
+
+- Screenshots or attachments
+
+- App version and operating system details
+
+- Optional diagnostics you choose to include to help us investigate a problem
+
+
+### **2.5 Data We Do NOT Use for Advertising or Tracking**
+
+The released version of FamilyFund does not use a third-party advertising SDK and does not send in-app behavioral analytics to our own servers for marketing profiling.
 
 ***
 
 
 ## **3. How We Use Your Data**
 
-**Financial Data:** Exclusively for your personal use within the App.
+We use data only for the purposes needed to operate the app and support users.
 
-**Subscription Data:** To validate your Premium subscription status and provide Premium features.
+**Financial Data:** To let you log transactions, create budgets, track spending, and sync your data through your personal iCloud account when enabled.
 
-**Diagnostic Data:** To diagnose crashes, improve performance, and enhance user experience.
+**Subscription Data:** To validate Premium status and unlock paid features.
 
-**Contact Information:** Only to respond to support requests if you email us directly.
+**Currency Request Data:** To provide currency conversion results inside the app.
+
+**Support Information:** To respond to support requests, troubleshoot problems, and improve app reliability.
 
 ***
 
@@ -93,61 +106,49 @@ FamilyFund does NOT collect:
 
 ### **4.1 iCloud Sync (CloudKit)**
 
-- Your financial data is stored in your **private iCloud database**
+- Your financial data can be stored in your **private iCloud database** if you enable sync
 
-- This database is encrypted by Apple and only accessible by you and your Apple-signed devices
+- This data is handled through Apple CloudKit infrastructure tied to your Apple account
 
-- We (the developers) cannot access your financial records
-
-- You maintain full control over your iCloud account
+- We do not have our own server copy of your financial ledger
 
 
 ### **4.2 On-Device Storage**
 
-- SwiftData stores a local copy of your data on each device
+- FamilyFund stores a local copy of your data on each device you use
 
-- This data is protected by iOS device encryption
-
-
-### **4.3 No External Servers**
-
-FamilyFund does not maintain our own servers to store user data. All data remains either on your device or in your iCloud account.
-
-***
+- This data benefits from Apple device security features, including device-level encryption and access controls
 
 
-## **5. Data Sharing**
+### **4.3 No FamilyFund Backend for Ledger Storage**
 
-**We do NOT sell, rent, or share your data** with any third parties, including:
-
-- Marketing agencies
-
-- Data brokers
-
-- Social media platforms
-
-- Analytics companies (except Apple's crash reporting, if enabled)
-
-**Exception:** We may disclose information if required by law (court order, subpoena, government request).
+FamilyFund does not maintain its own backend server for storing your transaction history, budgets, or categories.
 
 ***
 
 
-## **6. Children's Privacy (COPPA Compliance)**
+## **5. Data Sharing and Recipients**
 
-FamilyFund is designed for families and may be used by minors. We comply with the Children's Online Privacy Protection Act (COPPA):
+We do not sell your personal data.
 
-- We do not knowingly collect personal information from children under 13 without parental consent
+Depending on the feature you use, data may be processed by:
 
-- If FamilyFund is used by minors, we recommend parents/guardians:
+- **Apple**, for App Store billing, StoreKit subscription handling, CloudKit/iCloud sync, and Apple platform services
 
-- Set up the account
+- **The exchange-rate provider used by the app** (`open.er-api.com`) when currency conversion data is requested
 
-- Configure family sharing through Apple ID
+- **Email providers and mail clients** when you contact support or send attachments
 
-- Monitor usage as needed
+- **Public authorities or courts** if disclosure is required by law
 
-- No financial data is transmitted to us or third parties
+***
+
+
+## **6. Children's Privacy**
+
+FamilyFund is a general-use budgeting app. It is not intended to knowingly collect personal information directly from children through external registration or marketing systems.
+
+If you believe a child has sent us personal data through a support channel, contact us and we will review the request.
 
 ***
 
@@ -156,86 +157,95 @@ FamilyFund is designed for families and may be used by minors. We comply with th
 
 ### **7.1 Apple Services**
 
-FamilyFund uses the following Apple services:
+FamilyFund uses Apple services including:
 
-- **CloudKit (iCloud):** For secure data syncing (Apple Privacy Policy applies)
+- **CloudKit (iCloud):** For optional personal data sync
 
-- **StoreKit 2:** For subscription payment processing (Apple Privacy Policy applies)
+- **StoreKit:** For subscription purchases and entitlement handling
 
-- **SafariServices:** To display legal documents (Terms, Privacy Policy). Safari is Apple's system browser with built-in privacy protections
+- **SafariServices / system browser:** To display legal documents and web content when needed
 
-For Apple's privacy practices, see: <https://www.apple.com/privacy/>
+For Apple's privacy practices, see: <https://www.apple.com/legal/privacy/>
 
 
-### **7.2 No Third-Party Analytics or Advertising**
+### **7.2 Exchange-Rate Service**
 
-FamilyFund does not integrate RevenueCat, Firebase, Google Analytics, or similar services.
+FamilyFund may request exchange-rate data from: <https://open.er-api.com/>
+
+
+### **7.3 No Third-Party Advertising SDK**
+
+FamilyFund does not integrate advertising SDKs or third-party analytics SDKs for marketing profiling in the released app.
 
 ***
 
 
 ## **8. Data Retention**
 
-- **Financial Data:** Retained as long as you use the App. You can delete all data by deleting the App
+- **Financial Data on your device:** Kept until you delete it, delete the app, or reset app data
 
-- **iCloud Data:** Retained in your iCloud account indefinitely or until you delete it
+- **Financial Data in iCloud:** Kept until you delete it from the app and/or from your iCloud account, subject to Apple's systems
 
-- **Subscription Status:** Retained by Apple for billing purposes
+- **Subscription Status used by the app:** Kept only as long as needed to determine access to premium features
 
-- **Diagnostic Data:** Retained by Apple for 30 days (per Apple's policy)
+- **Support Emails and Attachments:** Kept for as long as reasonably necessary to respond to your request and manage follow-up, unless a longer period is required by law or needed for an ongoing dispute
+
+- **Optional Diagnostics sent with support requests:** Kept only as long as needed to investigate the issue
+
+Deleting the app removes local on-device data, but it may not automatically remove data stored in your iCloud account or information already contained in support emails you previously sent.
 
 ***
 
 
 ## **9. Your Rights and Controls**
 
-You have the right to:
+Depending on your location and applicable law, you may have the right to:
 
-1. **Access:** View all financial data stored in the App
+1. **Access:** Request access to personal data we process about you
 
-2. **Delete:** Remove any transaction, budget, or category
+2. **Correction:** Request correction of inaccurate information
 
-3. **Export (Premium):** Download your data as CSV/PDF (if available in Premium tier)
+3. **Deletion:** Request deletion where applicable
 
-4. **iCloud Control:** Turn off iCloud sync in Settings > \[Your Device] > iCloud > FamilyFund
+4. **Restriction or Objection:** Request restriction of certain processing or object where permitted by law
 
-5. **Unsubscribe:** Cancel Premium subscription anytime in App Store settings (manage subscriptions)
+5. **Portability:** Request data portability where applicable
+
+6. **Withdraw Consent:** Withdraw consent where processing relies on consent, such as optional diagnostic material you chose to send
+
+You can also control much of your data directly in the app by editing or deleting your own financial records and by controlling iCloud sync in Apple settings.
 
 ***
 
 
 ## **10. Changes to This Policy**
 
-We may update this Privacy Policy occasionally to reflect changes in our practices or legal requirements. We will notify you of material changes by updating the "Last Updated" date above. Continued use of the App implies acceptance of the updated policy.
+We may update this Privacy Policy from time to time to reflect legal, technical, or product changes. When we do, we will update the "Last Updated" date above.
 
 ***
 
 
 ## **11. Contact Us**
 
-If you have questions about this Privacy Policy or how we handle your data:
+If you have questions about this Privacy Policy or your privacy rights, contact:
 
-**Email:** code.horizon.ventures\@gmail.com
-
-**Subject Line:** "FamilyFund Privacy Question"
+**Email:** support@familyfund.app
 
 ***
 
 
-## **12. Legal Compliance**
+## **12. Additional Notice for Users in the EU/EEA and Similar Jurisdictions**
 
-This Privacy Policy complies with:
+Where applicable, we process personal data under one or more valid legal bases, including:
 
-- Apple App Store Guidelines
+- Performance of a contract or providing the app functionality you request
 
-- General Data Protection Regulation (GDPR) for EU residents
+- Legitimate interests in supporting, securing, and improving the app
 
-- Children's Online Privacy Protection Act (COPPA) for US residents under 13
+- Your consent where you voluntarily choose to send optional diagnostic material
 
-- California Consumer Privacy Act (CCPA)
+If you are in the EU/EEA, UK, or another jurisdiction with similar rights, you may also lodge a complaint with your local data protection authority.
 
 ***
 
 _FamilyFund is developed by Petro Kulakov_
-
-_© 2025 Petro Kulakov. All rights reserved._
