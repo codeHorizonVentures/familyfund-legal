@@ -182,6 +182,23 @@ layout: null
             gap: 14px;
             flex-wrap: wrap;
             margin-top: 28px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            line-height: 0;
+            text-decoration: none;
+        }
+
+        .app-store-btn img {
+            display: block;
+            height: 60px;
+            width: auto;
         }
 
         .text-button {
@@ -238,6 +255,9 @@ layout: null
                 radial-gradient(circle at bottom left, rgba(13, 106, 74, 0.12) 0%, transparent 30%),
                 linear-gradient(180deg, #f8fcff 0%, #edf4fb 100%);
             border: 1px solid rgba(216, 225, 238, 0.95);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
         }
 
         .screen-card {
@@ -264,6 +284,7 @@ layout: null
             display: block;
             width: 100%;
             height: auto;
+            pointer-events: none;
         }
 
         .screen-stack {
