@@ -6,184 +6,776 @@ layout: null
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FamilyFund - Private Family Budgeting for iOS</title>
-    
-    <!-- SEO & Schema -->
-    <meta name="description" content="Secure, iCloud-synced family finance app. Track budgets and savings together without sharing data with servers.">
+    <title>FamilyFund - Private Family Budget App for iPhone and iPad</title>
+    <meta
+        name="description"
+        content="FamilyFund helps you plan category budgets, track family spending, and understand what is safe to spend this month while keeping your data on device and in your personal iCloud account."
+    >
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "FamilyFund",
-      "operatingSystem": "iOS",
+      "operatingSystem": "iOS, iPadOS",
       "applicationCategory": "FinanceApplication",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "author": { "@type": "Person", "name": "Petro Kulakov" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Petro Kulakov"
+      }
     }
     </script>
-
     <style>
-        /* VARIABLES & RESET */
         :root {
-            --primary: #007AFF; /* Apple Blue */
-            --bg: #F5F5F7;
-            --text: #1D1D1F;
-            --text-light: #86868B;
-            --white: #FFFFFF;
+            --ink: #12233f;
+            --muted: #64748b;
+            --line: #d8e1ee;
+            --paper: #ffffff;
+            --mist: #eef5fb;
+            --sky: #f7fbff;
+            --blue: #1f7aff;
+            --blue-deep: #1154c1;
+            --mint: #def6eb;
+            --mint-ink: #0d6a4a;
+            --sand: #fff4e8;
+            --sand-ink: #92592a;
+            --shadow: 0 24px 48px rgba(18, 35, 63, 0.08);
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        
-        body { background: var(--bg); color: var(--text); line-height: 1.5; }
 
-        /* HERO SECTION */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.6;
+            background:
+                radial-gradient(circle at top left, #f7fbff 0%, #eff5fb 45%, #e8eef7 100%);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .shell {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(16px);
+            background: rgba(239, 245, 251, 0.88);
+            border-bottom: 1px solid rgba(216, 225, 238, 0.95);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            color: var(--paper);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--blue) 0%, #4ea3ff 100%);
+            box-shadow: 0 10px 24px rgba(31, 122, 255, 0.24);
+        }
+
+        .brand-copy strong {
+            display: block;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .brand-copy span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.83rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.94rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
         .hero {
-            text-align: center;
-            padding: 100px 20px 60px;
-            background: var(--white);
-            border-bottom: 1px solid #e5e5e5;
+            padding: 52px 0 28px;
+        }
+
+        .hero-panel {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 28px;
+            padding: 34px;
+            border: 1px solid rgba(216, 225, 238, 0.95);
+            border-radius: 30px;
+            background: linear-gradient(150deg, rgba(255, 255, 255, 0.97) 0%, rgba(247, 251, 255, 0.96) 100%);
+            box-shadow: var(--shadow);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: var(--mint);
+            color: var(--mint-ink);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -1.5px;
-            margin-bottom: 15px;
-            background: -webkit-linear-gradient(#1D1D1F, #4A4A4F);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin: 16px 0 14px;
+            font-size: clamp(2.6rem, 4.4vw, 4.3rem);
+            line-height: 0.94;
+            letter-spacing: -0.048em;
         }
 
         .hero p {
-            font-size: 1.5rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            font-weight: 400;
+            margin: 0;
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 1.06rem;
         }
 
-        /* DOWNLOAD BUTTON */
-        .app-store-btn {
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-        .app-store-btn:hover { transform: scale(1.05); }
-        .app-store-btn img { height: 60px; }
-
-        /* FEATURES GRID */
-        .features {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 28px;
         }
 
-        .feature-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
+        .text-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 0 18px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.84);
+            color: var(--ink);
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.18s ease, border-color 0.18s ease;
         }
 
-        .feature-card:hover { transform: translateY(-5px); }
-
-        .icon { font-size: 3rem; margin-bottom: 20px; display: block; }
-        
-        .feature-card h3 { font-size: 1.25rem; margin-bottom: 10px; font-weight: 600; }
-        .feature-card p { color: var(--text-light); font-size: 0.95rem; }
-
-        /* PRIVACY BADGE */
-        .privacy-section {
-            text-align: center;
-            padding: 60px 20px;
-            background: #fff;
-            margin-top: 40px;
+        .text-button:hover,
+        .app-store-btn:hover {
+            transform: translateY(-1px);
         }
-        .privacy-badge {
-            background: #E8F2FF;
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 20px;
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .meta-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.78);
+            color: var(--muted);
+            font-size: 0.86rem;
             font-weight: 600;
+        }
+
+        .phone-stage {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 520px;
+            padding: 18px;
+            border-radius: 26px;
+            background:
+                radial-gradient(circle at top right, rgba(31, 122, 255, 0.16) 0%, transparent 34%),
+                radial-gradient(circle at bottom left, rgba(13, 106, 74, 0.12) 0%, transparent 30%),
+                linear-gradient(180deg, #f8fcff 0%, #edf4fb 100%);
+            border: 1px solid rgba(216, 225, 238, 0.95);
+        }
+
+        .phone {
+            width: min(320px, 100%);
+            padding: 14px;
+            border-radius: 38px;
+            background: linear-gradient(180deg, #0d1728 0%, #1c2c45 100%);
+            box-shadow: 0 32px 52px rgba(18, 35, 63, 0.18);
+        }
+
+        .screen {
+            padding: 18px 16px 16px;
+            border-radius: 28px;
+            background: linear-gradient(180deg, #fbfdff 0%, #f3f7fb 100%);
+            overflow: hidden;
+        }
+
+        .status-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .hero-card {
+            padding: 16px;
+            border-radius: 22px;
+            color: var(--paper);
+            background: linear-gradient(135deg, var(--blue) 0%, #4da2ff 100%);
+            box-shadow: 0 16px 28px rgba(31, 122, 255, 0.2);
+        }
+
+        .hero-card span {
+            display: inline-flex;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .hero-card strong {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.18rem;
+            line-height: 1.1;
+        }
+
+        .hero-card p {
+            margin: 8px 0 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.88rem;
+        }
+
+        .mini-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .mini-card {
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.86);
+        }
+
+        .mini-card strong {
+            display: block;
+            margin-bottom: 4px;
             font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 20px;
         }
 
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-light);
-            font-size: 0.85rem;
-            border-top: 1px solid #e5e5e5;
+        .mini-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.84rem;
         }
 
-        footer a { color: var(--text-light); text-decoration: none; margin: 0 10px; }
-        footer a:hover { color: var(--primary); text-decoration: underline; }
+        .budget-bar {
+            margin-top: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: #dce6f4;
+            overflow: hidden;
+        }
 
-        /* MOBILE OPTIMIZATION */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
+        .budget-bar > span {
+            display: block;
+            height: 100%;
+            width: 64%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #45a5ff 0%, #1f7aff 100%);
+        }
+
+        .section {
+            margin: 26px 0;
+            padding: 28px;
+            border: 1px solid rgba(216, 225, 238, 0.95);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.93);
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.58rem;
+            letter-spacing: -0.03em;
+        }
+
+        .section-header p {
+            margin: 0;
+            max-width: 650px;
+            color: var(--muted);
+        }
+
+        .proof-grid,
+        .workflow-grid,
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .proof-card,
+        .workflow-card,
+        .trust-card {
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+        }
+
+        .proof-kicker,
+        .workflow-kicker,
+        .trust-kicker {
+            display: inline-flex;
+            margin-bottom: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--mist);
+            color: var(--blue-deep);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .trust-card--warm .trust-kicker {
+            background: var(--sand);
+            color: var(--sand-ink);
+        }
+
+        .proof-card h3,
+        .workflow-card h3,
+        .trust-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.03rem;
+        }
+
+        .proof-card p,
+        .workflow-card p,
+        .trust-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .premium-band {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .premium-main {
+            padding: 24px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #12233f 0%, #1f4370 100%);
+            color: var(--paper);
+        }
+
+        .premium-main .proof-kicker {
+            background: rgba(255, 255, 255, 0.14);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .premium-main h2 {
+            margin: 0 0 10px;
+            font-size: 1.9rem;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .premium-main p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .premium-side {
+            display: grid;
+            gap: 16px;
+        }
+
+        .premium-note {
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+        }
+
+        .premium-note strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.98rem;
+        }
+
+        .premium-note p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .closing-panel {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .closing-panel h2 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+            line-height: 1.04;
+            letter-spacing: -0.04em;
+        }
+
+        .closing-panel p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .footer {
+            padding: 34px 0 50px;
+            color: var(--muted);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(216, 225, 238, 0.95);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue);
+        }
+
+        @media (max-width: 920px) {
+            .hero-panel,
+            .premium-band,
+            .closing-panel,
+            .proof-grid,
+            .workflow-grid,
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header,
+            .footer-grid,
+            .nav {
+                align-items: start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .shell {
+                width: min(100% - 20px, 1120px);
+            }
+
+            .hero {
+                padding-top: 24px;
+            }
+
+            .hero-panel,
+            .section {
+                padding: 20px;
+                border-radius: 22px;
+            }
+
+            .hero h1,
+            .closing-panel h2 {
+                font-size: 2.28rem;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Master Family Finances.</h1>
-        <p>Budget together, save together. Securely synced via iCloud, with no external servers tracking your data.</p>
-        
-        <a href="https://apps.apple.com/us/app/familyfund-budget-tracker/id6657954717" class="app-store-btn">
-            <!-- Apple's Official Badge SVG -->
-            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1702252800" alt="Download on the App Store">
-        </a>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="features">
-        <div class="feature-card">
-            <span class="icon">🔒</span>
-            <h3>Privacy First</h3>
-            <p>Your data lives on your device and your personal iCloud. We never see your transactions.</p>
+    <header>
+        <div class="shell nav">
+            <a class="brand" href="/">
+                <div class="brand-mark">F</div>
+                <div class="brand-copy">
+                    <strong>FamilyFund</strong>
+                    <span>Private family budgeting for Apple devices</span>
+                </div>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="/portal.html">Portal</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="mailto:support@familyfund.app">Support</a>
+            </nav>
         </div>
-        <div class="feature-card">
-            <span class="icon">☁️</span>
-            <h3>iCloud Sync</h3>
-            <p>Seamlessly sync budgets across everyone's iPhone and iPad using CloudKit.</p>
-        </div>
-        <div class="feature-card">
-            <span class="icon">📊</span>
-            <h3>Premium Insights</h3>
-            <p>Export professional PDF reports and visualize spending with beautiful charts.</p>
-        </div>
-    </section>
+    </header>
 
-    <!-- PRIVACY STATEMENT -->
-    <section class="privacy-section">
-        <span class="privacy-badge">SwiftData + CloudKit</span>
-        <h2>Your Data. Your Control.</h2>
-        <p style="max-width: 600px; margin: 20px auto; color: #86868B;">
-            FamilyFund uses Apple's native frameworks to ensure your financial life stays private. 
-            No logins, no tracking, no data selling.
-        </p>
-    </section>
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-panel">
+                <div>
+                    <div class="eyebrow">Private family budget app</div>
+                    <h1>Know what is safe to spend this month.</h1>
+                    <p>
+                        Plan category limits, track everyday spending, and keep your family budget
+                        private on device and in your personal iCloud account. FamilyFund is built
+                        for monthly control, not spreadsheet overhead.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://apps.apple.com/app/id6657954717" class="app-store-btn">
+                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1702252800" alt="Download on the App Store">
+                        </a>
+                        <a class="text-button" href="/portal.html">Open portal</a>
+                    </div>
+                    <div class="hero-meta">
+                        <div class="meta-pill">iPhone and iPad</div>
+                        <div class="meta-pill">Private iCloud sync</div>
+                        <div class="meta-pill">Apple-managed premium billing</div>
+                    </div>
+                </div>
+                <div class="phone-stage">
+                    <div class="phone" aria-hidden="true">
+                        <div class="screen">
+                            <div class="status-row">
+                                <span>9:41</span>
+                                <span>FamilyFund</span>
+                            </div>
+                            <div class="hero-card">
+                                <span>Monthly budget</span>
+                                <strong>EUR 420 still safe to spend</strong>
+                                <p>Food, housing, kids, bills, and day-to-day family spending in one monthly view.</p>
+                            </div>
+                            <div class="mini-grid">
+                                <div class="mini-card">
+                                    <strong>Housing</strong>
+                                    <p>EUR 1,180 of EUR 1,450 used</p>
+                                    <div class="budget-bar"><span style="width:81%"></span></div>
+                                </div>
+                                <div class="mini-card">
+                                    <strong>Food</strong>
+                                    <p>EUR 420 of EUR 620 used</p>
+                                    <div class="budget-bar"><span style="width:68%"></span></div>
+                                </div>
+                                <div class="mini-card">
+                                    <strong>Private by design</strong>
+                                    <p>Your data stays on device and in your own iCloud account when sync is enabled.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <nav>
-            <a href="/privacy/">Privacy Policy</a> |
-            <a href="/terms/">Terms of Service</a> |
-            <a href="mailto:code.horizon.ventures@gmail.com">Contact Support</a>
-        </nav>
-        <p style="margin-top: 20px;">&copy; 2025 Petro Kulakov. "FamilyFund" is a trademark of Code Horizon Venture.</p>
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>Why families use FamilyFund</h2>
+                    <p>The product message is simple: control spending month to month, keep categories clear, and avoid losing visibility when life gets busy.</p>
+                </div>
+            </div>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-kicker">Monthly clarity</div>
+                    <h3>Plan by real-life categories</h3>
+                    <p>Set budgets for food, housing, kids, bills, travel, or any custom category you actually use in daily life.</p>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-kicker">Safe to spend</div>
+                    <h3>See the room left this month</h3>
+                    <p>Review what has already been used and what still looks safe before the month drifts off plan.</p>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-kicker">Private by design</div>
+                    <h3>Keep the ledger in your own Apple ecosystem</h3>
+                    <p>FamilyFund does not run its own ledger backend. Core budget data stays on device and, if enabled, in your personal iCloud account.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>How it fits real monthly budgeting</h2>
+                    <p>FamilyFund is designed around the basic loop most households repeat every month.</p>
+                </div>
+            </div>
+            <div class="workflow-grid">
+                <div class="workflow-card">
+                    <div class="workflow-kicker">1. Set limits</div>
+                    <h3>Define the month before it gets noisy</h3>
+                    <p>Create category budgets and decide what “normal” should look like for the month ahead.</p>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-kicker">2. Track spending</div>
+                    <h3>Keep the daily picture current</h3>
+                    <p>Log income and expenses fast enough to keep the budget usable, not theoretical.</p>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-kicker">3. Review what is left</div>
+                    <h3>Make calmer decisions with current numbers</h3>
+                    <p>Use the summary to understand where the month stands before you spend more, export reports, or share numbers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="premium-band">
+                <div class="premium-main">
+                    <div class="proof-kicker">Premium</div>
+                    <h2>Premium is for exports, deeper review, and long-term use.</h2>
+                    <p>
+                        FamilyFund keeps the core story simple and leaves pricing, offers, billing, and subscription
+                        eligibility to Apple's purchase flow. Annual is the stronger long-term value plan when you
+                        use the app as your regular monthly budget tool.
+                    </p>
+                </div>
+                <div class="premium-side">
+                    <div class="premium-note">
+                        <strong>Apple handles the purchase flow</strong>
+                        <p>The App Store shows the live monthly and annual plans, current pricing, and any available introductory offers.</p>
+                    </div>
+                    <div class="premium-note">
+                        <strong>Built for real outputs</strong>
+                        <p>Premium supports higher-value workflows like exports and deeper review when you need to keep or share clear summaries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>Trust and product details</h2>
+                    <p>What the app does and does not do should be easy to understand before download.</p>
+                </div>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="trust-kicker">Sync</div>
+                    <h3>Personal iCloud account</h3>
+                    <p>When sync is enabled, FamilyFund uses Apple's CloudKit infrastructure linked to your own Apple account.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-kicker">Billing</div>
+                    <h3>App Store subscriptions</h3>
+                    <p>Apple processes premium billing, renewals, cancellation, and refunds through its standard account systems.</p>
+                </div>
+                <div class="trust-card trust-card--warm">
+                    <div class="trust-kicker">Support</div>
+                    <h3>Direct email help</h3>
+                    <p>If something breaks or feels unclear, use the portal and email support with screenshots and the exact issue details.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="closing-panel">
+                <div>
+                    <h2>Private family budgeting without a cluttered finance stack.</h2>
+                    <p>
+                        If you want a cleaner monthly budget view, category-based planning, and a product that
+                        keeps core data inside your Apple environment, start with FamilyFund.
+                    </p>
+                </div>
+                <div class="hero-actions" style="justify-content: flex-start;">
+                    <a href="https://apps.apple.com/app/id6657954717" class="app-store-btn">
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1702252800" alt="Download on the App Store">
+                    </a>
+                    <a class="text-button" href="/portal.html">Read support portal</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="shell footer-grid">
+            <div>
+                <strong>FamilyFund</strong><br>
+                <span>Private family budgeting for Apple devices.</span>
+            </div>
+            <div class="footer-links">
+                <a href="/portal.html">Portal</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="mailto:support@familyfund.app">Contact support</a>
+            </div>
+        </div>
+        <div class="shell" style="padding-top: 16px; color: var(--muted); font-size: 0.85rem;">
+            &copy; 2026 Petro Kulakov. "FamilyFund" is a trademark of Code Horizon Venture.
+        </div>
     </footer>
-
 </body>
 </html>
