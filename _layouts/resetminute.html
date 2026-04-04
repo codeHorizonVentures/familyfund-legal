@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ page.title }} | ResetMinute</title>
+        <meta name="description" content="{{ page.description | default: 'ResetMinute is an iPhone-first desk reset app for desk workers.' }}">
+        <style>
+            :root {
+                --ink: #1d2b24;
+                --muted: #56665e;
+                --line: #d8e4db;
+                --paper: #ffffff;
+                --mist: #f3f7f3;
+                --mint: #dff5e8;
+                --mint-strong: #2b8f67;
+                --mint-deep: #166447;
+                --sand: #f5efe2;
+                --shadow: 0 18px 44px rgba(22, 100, 71, 0.10);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                margin: 0;
+                font-family: "Avenir Next", "Segoe UI", sans-serif;
+                color: var(--ink);
+                line-height: 1.65;
+                background:
+                    radial-gradient(circle at top left, #f8fcf8 0%, #eef6f1 48%, #e7efe9 100%);
+            }
+
+            a {
+                color: var(--mint-deep);
+            }
+
+            .shell {
+                width: min(1040px, calc(100% - 32px));
+                margin: 0 auto;
+            }
+
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 20;
+                backdrop-filter: blur(16px);
+                background: rgba(243, 247, 243, 0.90);
+                border-bottom: 1px solid rgba(216, 228, 219, 0.95);
+            }
+
+            .nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 18px;
+                padding: 18px 0;
+            }
+
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .brand-mark {
+                width: 42px;
+                height: 42px;
+                display: grid;
+                place-items: center;
+                border-radius: 14px;
+                background: linear-gradient(135deg, var(--mint-strong) 0%, #6bcf98 100%);
+                color: white;
+                font-size: 0.95rem;
+                font-weight: 800;
+                letter-spacing: 0.04em;
+                box-shadow: 0 10px 24px rgba(43, 143, 103, 0.24);
+            }
+
+            .brand-copy strong {
+                display: block;
+                font-size: 1rem;
+                letter-spacing: 0.01em;
+            }
+
+            .brand-copy span {
+                display: block;
+                font-size: 0.82rem;
+                color: var(--muted);
+            }
+
+            .nav-links {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: var(--muted);
+                font-size: 0.94rem;
+            }
+
+            .nav-links a:hover {
+                color: var(--mint-deep);
+            }
+
+            main {
+                padding: 34px 0 56px;
+            }
+
+            .hero {
+                margin-bottom: 28px;
+                padding: 30px;
+                border: 1px solid var(--line);
+                border-radius: 28px;
+                background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 250, 246, 0.95) 100%);
+                box-shadow: var(--shadow);
+            }
+
+            .eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 7px 12px;
+                border-radius: 999px;
+                background: var(--mint);
+                color: var(--mint-deep);
+                font-size: 0.79rem;
+                font-weight: 700;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+            }
+
+            h1 {
+                margin: 16px 0 12px;
+                font-size: clamp(2.1rem, 4.4vw, 3.9rem);
+                line-height: 0.96;
+                letter-spacing: -0.045em;
+            }
+
+            h2 {
+                margin-top: 2rem;
+                line-height: 1.15;
+            }
+
+            .lede {
+                max-width: 760px;
+                color: var(--muted);
+                font-size: 1.05rem;
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 18px;
+                margin: 26px 0;
+            }
+
+            .card {
+                padding: 18px;
+                border-radius: 20px;
+                border: 1px solid var(--line);
+                background: rgba(255, 255, 255, 0.9);
+            }
+
+            .card strong {
+                display: block;
+                margin-bottom: 8px;
+                font-size: 1rem;
+            }
+
+            .callout {
+                padding: 16px 18px;
+                border-radius: 18px;
+                background: var(--sand);
+                border: 1px solid #eadbc0;
+                color: #624b2d;
+            }
+
+            .content-panel {
+                padding: 26px;
+                border-radius: 24px;
+                border: 1px solid var(--line);
+                background: rgba(255, 255, 255, 0.92);
+                box-shadow: 0 12px 28px rgba(29, 43, 36, 0.05);
+            }
+
+            ul, ol {
+                padding-left: 1.25rem;
+            }
+
+            footer {
+                padding: 26px 0 50px;
+                color: var(--muted);
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            code {
+                font-family: ui-monospace, SFMono-Regular, SFMono-Regular, Menlo, monospace;
+                font-size: 0.93em;
+                background: rgba(22, 100, 71, 0.08);
+                padding: 0.1rem 0.35rem;
+                border-radius: 6px;
+            }
+
+            @media (max-width: 760px) {
+                .nav {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .hero,
+                .content-panel {
+                    padding: 22px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="shell nav">
+                <a class="brand" href="/resetminute/">
+                    <div class="brand-mark">RM</div>
+                    <div class="brand-copy">
+                        <strong>ResetMinute</strong>
+                        <span>Desk Breaks for Neck &amp; Back</span>
+                    </div>
+                </a>
+                <nav class="nav-links">
+                    <a href="/resetminute/">Overview</a>
+                    <a href="/resetminute/support/">Support</a>
+                    <a href="/resetminute/privacy/">Privacy</a>
+                    <a href="/resetminute/terms/">Terms</a>
+                </nav>
+            </div>
+        </header>
+        <main class="shell">
+            {{ content }}
+        </main>
+        <footer class="shell">
+            <p>ResetMinute support pages are currently hosted on <code>familyfund.app</code> for the MVP release, and <code>support@familyfund.app</code> also handles ResetMinute support.</p>
+        </footer>
+    </body>
+</html>
