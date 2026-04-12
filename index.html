@@ -13,6 +13,7 @@ layout: null
         name="description"
         content="FamilyFund helps you plan category budgets, track family spending, and understand what is safe to spend this month while keeping your data on device and in your personal iCloud account."
     >
+    <meta name="apple-itunes-app" content="app-id=6657954717, app-argument=https://familyfund.app/">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -329,7 +330,8 @@ layout: null
 
         .proof-grid,
         .workflow-grid,
-        .trust-grid {
+        .trust-grid,
+        .intent-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 16px;
@@ -337,7 +339,8 @@ layout: null
 
         .proof-card,
         .workflow-card,
-        .trust-card {
+        .trust-card,
+        .intent-card {
             padding: 20px;
             border: 1px solid var(--line);
             border-radius: 20px;
@@ -366,17 +369,65 @@ layout: null
 
         .proof-card h3,
         .workflow-card h3,
-        .trust-card h3 {
+        .trust-card h3,
+        .intent-card h3 {
             margin: 0 0 8px;
             font-size: 1.03rem;
         }
 
         .proof-card p,
         .workflow-card p,
-        .trust-card p {
+        .trust-card p,
+        .intent-card p {
             margin: 0;
             color: var(--muted);
             font-size: 0.93rem;
+        }
+
+        .intent-card {
+            display: grid;
+            gap: 14px;
+        }
+
+        .intent-label {
+            display: inline-flex;
+            width: fit-content;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--mist);
+            color: var(--blue-deep);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .intent-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 2px;
+        }
+
+        .intent-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 0 14px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.84);
+            color: var(--ink);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.18s ease, border-color 0.18s ease;
+        }
+
+        .intent-link:hover {
+            transform: translateY(-1px);
+            border-color: rgba(31, 122, 255, 0.42);
         }
 
         .premium-band {
@@ -571,7 +622,7 @@ layout: null
                         for monthly control, not spreadsheet overhead.
                     </p>
                     <div class="hero-actions">
-                        <a href="https://apps.apple.com/app/id6657954717" class="app-store-btn">
+                        <a href="https://apps.apple.com/app/id6657954717?ppid=5cc42b25-3285-43d5-a78b-7428de56cf4e" class="app-store-btn">
                             <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1702252800" alt="Download on the App Store">
                         </a>
                         <a class="text-button" href="/portal.html">Open portal</a>
@@ -593,6 +644,41 @@ layout: null
                         <div class="screen-card screen-card--bottom">
                             <img src="/assets/screens/private-by-design.png" alt="">
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>Choose the App Store page that matches your goal</h2>
+                    <p>FamilyFund uses focused product pages for different budgeting intents. Start with the one that best matches why you are considering the app.</p>
+                </div>
+            </div>
+            <div class="intent-grid">
+                <div class="intent-card">
+                    <span class="intent-label">Control &amp; clarity</span>
+                    <h3>Broad monthly budgeting and category control</h3>
+                    <p>Best if you want the most balanced overview of category tracking, family-budget visibility, and everyday budget control.</p>
+                    <div class="intent-actions">
+                        <a class="intent-link" href="https://apps.apple.com/app/id6657954717?ppid=5cc42b25-3285-43d5-a78b-7428de56cf4e">Open Control &amp; Clarity</a>
+                    </div>
+                </div>
+                <div class="intent-card">
+                    <span class="intent-label">Monthly planner</span>
+                    <h3>Plan the month before spending gets noisy</h3>
+                    <p>Best if your main job is setting category limits early and understanding what is still safe to spend as the month unfolds.</p>
+                    <div class="intent-actions">
+                        <a class="intent-link" href="https://apps.apple.com/app/id6657954717?ppid=028ae605-c358-4199-9d30-7d5dc148ad08">Open Monthly Planner</a>
+                    </div>
+                </div>
+                <div class="intent-card">
+                    <span class="intent-label">Private finance</span>
+                    <h3>Lead with privacy and personal iCloud storage</h3>
+                    <p>Best if you care most about keeping the budget on device and in your own Apple account rather than in a hosted ledger backend.</p>
+                    <div class="intent-actions">
+                        <a class="intent-link" href="https://apps.apple.com/app/id6657954717?ppid=bdd84398-515b-4981-aa5c-91504c53e75a">Open Private Finance</a>
                     </div>
                 </div>
             </div>
@@ -710,7 +796,7 @@ layout: null
                     </p>
                 </div>
                 <div class="hero-actions" style="justify-content: flex-start;">
-                    <a href="https://apps.apple.com/app/id6657954717" class="app-store-btn">
+                    <a href="https://apps.apple.com/app/id6657954717?ppid=5cc42b25-3285-43d5-a78b-7428de56cf4e" class="app-store-btn">
                         <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1702252800" alt="Download on the App Store">
                     </a>
                     <a class="text-button" href="/portal.html">Read support portal</a>
