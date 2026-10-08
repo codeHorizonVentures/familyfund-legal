@@ -6,12 +6,14 @@ permalink: /terms/
 
 # **Terms of Service for FamilyFund**
 
-**Last Updated: March 23, 2026**
+**Last Updated: October 8, 2026**
 
 
 ## **1. Acceptance of Terms**
 
-By downloading, installing, or using FamilyFund (the "Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the Service.
+FamilyFund (the "Service") is provided by Petro Kulakov, an independent developer ("we," "us," or "our"). These Terms describe the Service, permitted use, and our respective responsibilities. Review them before using the Service. Where agreement is legally required, use alone does not replace that requirement.
+
+For an app obtained through the App Store, the [Apple Standard End User License Agreement](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) governs the app license unless a custom license agreement is expressly provided through the App Store. These Terms supplement that agreement for FamilyFund services; they do not replace it or override mandatory law. The applicable App Store license controls any conflict concerning the app license.
 
 If you obtained FamilyFund through the Apple App Store, your use of the app is also subject to Apple's platform rules and Apple Media Services terms.
 
@@ -20,7 +22,7 @@ If you obtained FamilyFund through the Apple App Store, your use of the app is a
 
 ## **2. Relationship With Apple**
 
-These Terms are between you and FamilyFund, not between you and Apple.
+These supplemental Terms are between you and Petro Kulakov, the provider of FamilyFund, not between you and Apple.
 
 Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce these Terms against you to the extent permitted by applicable agreements and law.
 
@@ -33,7 +35,7 @@ Apple has no obligation to provide maintenance or support services for FamilyFun
 
 ### **3.1 License Grant**
 
-Petro Kulakov grants you a limited, non-exclusive, non-transferable, revocable license to use FamilyFund on Apple-branded devices that you own or control, as permitted by Apple's usage rules and subject to these Terms.
+FamilyFund is licensed, not sold. Your app license and its scope, including permitted devices and any applicable Family Sharing usage rights, are governed by the applicable App Store license agreement and Apple usage rules. We reserve rights not expressly granted; these Terms do not narrow rights granted by that license or by law.
 
 
 ### **3.2 Permitted Use**
@@ -60,6 +62,12 @@ You may NOT:
 - Attempt to access data that does not belong to you
 
 - Use the app in violation of applicable law or Apple platform rules
+
+- Send fabricated analytics, malicious content, or requests intended to overload or bypass protections on FamilyFund services
+
+- Scrape or automate access to FamilyFund server endpoints without permission, except where applicable law permits such access
+
+These restrictions do not prevent lawful security research, interoperability, or other rights that cannot be restricted by contract. Report suspected vulnerabilities privately to our support email; do not include another person's financial records.
 
 You must also comply with any applicable third-party terms when using FamilyFund, including Apple account terms and the terms governing any third-party services accessed through the app.
 
@@ -131,7 +139,7 @@ FamilyFund is a budgeting and expense-tracking tool for informational and person
 
 ### **5.2 User Responsibility**
 
-You are solely responsible for:
+You are responsible for:
 
 - The accuracy of the data you enter
 
@@ -140,9 +148,21 @@ You are solely responsible for:
 - Consulting qualified professionals when needed
 
 
-### **5.3 No Liability for Financial Decisions**
+### **5.3 Receipt Recognition and Shared Households**
 
-We are not responsible for financial losses, gains, or other decisions made based on your use of the app.
+Where available, receipt capture prepares an editable expense draft. Recognition can be incomplete or incorrect and does not automatically save an expense. Review and confirm the fields before saving; you remain responsible for the records you create.
+
+When you use a shared household, share only records you are authorized to share. Other participants may view or edit shared records according to their permissions and may retain exports or copies. Review invitations and access settings before sharing.
+
+### **5.4 Estimates, Rates, and Records**
+
+Budgets, remaining-budget or "safe to spend" figures, conversions, summaries, and exports depend on the records you provide, calculation assumptions, rate availability, and sync timing. They are estimates or organisational records, not verified bank balances, permission to spend, or certified accounting or tax documents. Exchange rates may differ from rates and fees applied by your bank or payment provider. Verify important information against original records before making decisions.
+
+FamilyFund does not move money, hold funds, or execute investments. We do not guarantee a financial outcome. These limitations explain the purpose of the Service; they do not remove our responsibility for defects or any mandatory consumer remedy.
+
+### **5.5 Device Access, Exports, and Backups**
+
+Protect access to your device and Apple account. Keep suitable independent copies of important records using the available export and backup facilities. Sync is not a promise of a separate recoverable backup. Exported files and copies shared with others are outside the app's access controls. We cannot recall another participant's copies or guarantee recovery of records deleted from your devices or Apple services. These precautions do not waive your rights if the Service fails to meet legal requirements.
 
 ***
 
@@ -151,7 +171,7 @@ We are not responsible for financial losses, gains, or other decisions made base
 
 ### **6.1 App Ownership**
 
-The FamilyFund application, including its design, code, text, branding, and functionality, is owned by Petro Kulakov unless otherwise stated. All rights are reserved.
+Rights in the FamilyFund code, original design, text, graphics, and branding belong to Petro Kulakov or the relevant licensors. Third-party and open-source components remain subject to their applicable licenses. No ownership or right to use our branding to suggest affiliation or endorsement is transferred to you. Ideas, functional concepts, and rights that applicable law does not protect are not claimed exclusively by these Terms.
 
 
 ### **6.2 Your Data**
@@ -171,11 +191,15 @@ For information about how FamilyFund processes data, please see the [**Privacy P
 
 Key points:
 
-- Financial data is stored locally on your device and, if enabled, in your personal iCloud account
+- Financial data is stored on device and, if enabled, through Apple CloudKit; shared-household records are accessible to the participants you choose
 
 - Apple processes subscription payments and related infrastructure data
 
 - The app may request exchange-rate data from third-party services needed for app functionality
+
+- Receipt recognition in the current flow runs on device; review the draft before saving
+
+- Optional product analytics requires separate consent, is off by default, and can be declined without restricting features. Accepting these Terms does not grant analytics consent
 
 - Support emails and attachments are processed only if you choose to send them
 
@@ -188,29 +212,27 @@ FamilyFund relies on Apple platform services and may use third-party services ne
 
 Use of third-party services may be subject to the terms and privacy policies of those providers.
 
-We are not responsible for third-party services that we do not control.
+Availability and operation can depend on Apple services, network connectivity, device settings, and external rate providers. We do not control those providers or guarantee their uninterrupted availability. We remain responsible for our own obligations and for remedies that applicable law requires; using a third-party provider does not automatically exclude that responsibility.
 
 ***
 
 
 ## **9. Disclaimer of Warranties**
 
-TO THE MAXIMUM EXTENT PERMITTED BY LAW, FAMILYFUND IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND.
+FamilyFund is provided with the functionality and compatibility described at the time of supply. We do not promise uninterrupted or error-free operation, perfect receipt recognition, or a particular financial result. Any exclusion of additional warranties applies only to the extent allowed by law.
 
-To the extent mandatory consumer law in your jurisdiction gives you rights or guarantees that cannot be excluded, those rights are not waived by these Terms.
-
-If FamilyFund fails to conform to an applicable warranty, you may notify Apple, and Apple may refund the purchase price paid for the app to the extent required under Apple's policies or applicable law. To the maximum extent permitted by law, Apple has no other warranty obligation with respect to FamilyFund.
+Nothing excludes mandatory rights relating to conformity, required updates, repair, replacement, price reduction, termination, or refunds. Apple handles App Store purchase refund requests through its applicable process; this does not eliminate any legal responsibility of the provider. Apple's own warranty and support responsibilities are governed by the applicable App Store agreements and mandatory law.
 
 ***
 
 
 ## **10. Limitation of Liability**
 
-TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES ARISING FROM OR RELATED TO YOUR USE OF FAMILYFUND.
+Responsibility for loss is determined by applicable law and, for claims concerning the app license, the applicable App Store license agreement. These supplemental Terms do not impose an additional monetary cap on a consumer's mandatory rights or vary a liability rule in that license agreement.
 
-Our total liability for claims arising out of or relating to FamilyFund will not exceed the amount you paid for FamilyFund or its subscription services during the 12 months before the event giving rise to the claim, unless applicable law requires otherwise.
+To the extent permitted by applicable law, we do not accept responsibility for business losses arising from using this personal-budgeting Service for commercial purposes, or for losses that are not legally attributable to our breach. This does not exclude liability merely because a loss relates to financial information or a third-party service.
 
-Nothing in these Terms excludes or limits liability that cannot be excluded under applicable law.
+Nothing in these Terms excludes or limits liability for fraud, intentional misconduct, gross negligence, death or personal injury where legally protected, mandatory consumer remedies, data-protection obligations, or any other liability that cannot lawfully be excluded or limited.
 
 ***
 
@@ -226,16 +248,26 @@ You represent that you are not located in a country or region subject to a U.S. 
 
 ## **12. Changes to the App and These Terms**
 
-We may update the app and these Terms from time to time. If we make material changes, we will update the "Last Updated" date above and may provide additional notice where appropriate.
+We may make changes to maintain security and compatibility, comply with law, correct defects, or improve the Service. Required conformity or security updates and your statutory rights remain unaffected.
 
-Continued use of FamilyFund after updated Terms take effect means you accept the updated Terms, unless applicable law requires a different form of consent.
+For material changes to these Terms or changes that materially reduce an ongoing paid service, we will explain the change and provide reasonable advance notice in an accessible form, except where an urgent legal or security reason requires earlier action. Where law requires a durable-medium notice, express agreement, continued access to the unchanged service, or a right to terminate or obtain a remedy, we will respect that requirement. A revised date or continued use alone does not override it.
+
+Changes do not retrospectively remove accrued rights. Subscription cancellation is managed through Apple; ending app use does not itself cancel billing.
+
+### **12.1 Misuse and Service Restrictions**
+
+Where reasonably necessary to address unlawful use, attacks, or a material breach, we may restrict access to FamilyFund-operated server services, proportionately to the issue. Where practicable and lawful, we will explain the reason and allow you to contact support. This does not mean that we can remotely erase your local ledger or revoke your mandatory consumer rights.
+
+### **12.2 Severability**
+
+If a provision is unenforceable, the remaining provisions continue only to the extent they can lawfully do so. An invalid clause is not automatically replaced by a more favourable restriction on the consumer.
 
 ***
 
 
 ## **13. Governing Law and Consumer Rights**
 
-These Terms are governed by the laws applicable to Petro Kulakov's provision of the app, unless mandatory consumer law in your place of residence requires otherwise.
+These supplemental Terms do not select an exclusive law or court. Applicable law and jurisdiction are determined by the rules that govern your contract and the applicable App Store license. You retain any right to bring a claim before the courts available under mandatory consumer law.
 
 If you are a consumer in the EU/EEA, UK, or another jurisdiction with mandatory consumer protections, nothing in these Terms is intended to limit rights that cannot legally be waived.
 
@@ -254,7 +286,9 @@ If you have questions about these Terms, contact:
 
 **Email:** support@familyfund.app
 
-If public trader contact details are displayed for FamilyFund on the applicable App Store listing or otherwise required by law, those details form part of FamilyFund's public contact information.
+Use the support email for product, privacy, and legal enquiries. Contact details identify the provider and are not an invitation to contact unrelated personal accounts or publish private correspondence. This request does not restrict lawful complaints, honest reviews, regulatory reporting, or legal proceedings.
+
+Verified trader contact details displayed on the applicable App Store listing also form part of our public contact information. We do not ask users to send identity documents, payment-card details, passwords, or complete financial records in an initial support request. Redact information unrelated to your enquiry.
 
 ***
 
