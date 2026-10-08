@@ -88,6 +88,8 @@ Where available, you can photograph a receipt or select an existing image to pre
 
 Receipt images and recognition results are used temporarily for review and editable prefill; the current flow does not attach the original image to the saved transaction. Images you select from Photos remain subject to your Photos settings. Only the fields you confirm and save become financial records, following the storage and sharing rules above. Recognition can be inaccurate: review the amount, date, currency, and other fields before saving. Camera access is requested when you use the camera; refusing analytics does not prevent receipt recognition.
 
+If recognition is incorrect, you can explicitly choose to report an issue from the new transaction screen and attach the receipt to a support email. The app warns you before preparing this feedback. You can remove or replace the attachment and review the email before sending; no email is sent automatically. A receipt may reveal merchant, purchase, loyalty, payment, or other personal information, so share only what is necessary and that you are authorised to share. This voluntary support email is separate from on-device recognition and optional usage analytics. Support attachments follow the support-processing and retention rules in this policy.
+
 ### **2.6 Optional Product Analytics**
 
 FamilyFund offers optional first-party usage analytics to improve the app for users and make it easier to use. This feature is available in app versions that include the analytics consent screen. Events are collected and sent only after you explicitly allow analytics.
