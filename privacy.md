@@ -6,7 +6,7 @@ permalink: /privacy/
 
 # **Privacy Policy for FamilyFund**
 
-**Last Updated: October 8, 2026**
+**Last Updated: November 8, 2026**
 
 
 ## **1. Introduction**
@@ -55,6 +55,8 @@ If you subscribe to FamilyFund Premium:
 
 - **We do not receive your full payment card details or billing address from Apple**
 
+Where a promotional-offer signing service is configured and you request an eligible offer, the app can send its bundle identifier, product and offer identifiers, and Apple app transaction identifier to that service to obtain an offer signature. The signature request does not contain your financial ledger or full payment-card details. This conditional subscription function is separate from optional product analytics.
+
 
 ### **2.3 Currency Conversion Requests**
 
@@ -96,6 +98,10 @@ FamilyFund offers optional first-party usage analytics to improve the app for us
 
 Collection is off by default. A separate screen asks whether you want to allow analytics; refusal or closing the screen does not restrict app features. You can change your decision in **Profile > Privacy controls**. Accepting terms, buying a subscription, or permitting camera access is not analytics consent.
 
+Collection requires affirmative acceptance of the current consent notice (`explicit_opt_in_v1`). An earlier preference without that notice version does not enable collection. Closing the consent screen leaves collection off; you can make a decision later in Profile.
+
+Withdrawing consent stops future event capture and cancels active uploads where possible. A request already received by the service cannot be recalled by cancelling it. Withdrawal does not itself erase previously received events; those events remain subject to the retention periods and applicable deletion rights described below. Events from before consent are not uploaded retrospectively.
+
 With your permission, events can describe feature use, such as onboarding completion, budgeting actions, subscription flows, camera use, receipt-recognition success or failure, and saving an expense after receipt prefill. Each upload contains:
 
 - An event name and timestamp
@@ -104,6 +110,8 @@ With your permission, events can describe feature use, such as onboarding comple
 - The consent-notice version
 
 The identifier is **pseudonymous, not anonymous**. Event counts measure actions, not necessarily different people. Analytics does not include amounts, currency or category selections, transaction descriptions, merchant or household names, receipt images, recognized receipt content, contacts, payment details, advertising identifiers, or precise location.
+
+The event-properties object is intentionally empty. Region is not populated. The service accepts only approved milestone names and constrained context fields rather than arbitrary event descriptions.
 
 Events are sent to a FamilyFund endpoint hosted on **Cloudflare Workers**, with **Cloudflare D1** used for event storage and aggregated counts. Cloudflare also processes network information, such as IP addresses and request metadata, to deliver and protect the service. This infrastructure processing is separate from the event fields listed above.
 
@@ -235,6 +243,8 @@ FamilyFund does not integrate advertising SDKs or third-party analytics SDKs for
 
 - **Aggregate usage counts:** Retained for 12 calendar months for adoption and seasonal comparisons. Small counts are suppressed in reports; aggregation alone is not a guarantee of anonymity
 
+- **Private milestone reports:** Show the preceding complete UTC calendar month. Counts below ten are withheld and other counts are rounded down to tens. Historical aggregate records may predate the current explicit-consent contract and are not represented as a verified consented cohort
+
 - **Analytics expiry:** The configured deletion job runs daily, so physical removal can follow expiry by up to one scheduling interval. These periods apply to the analytics event tables and aggregate counts; infrastructure processing by providers is described separately in this policy
 
 - **Receipt images:** Used temporarily for recognition and review rather than retained as transaction attachments by the current flow
@@ -245,7 +255,7 @@ FamilyFund does not integrate advertising SDKs or third-party analytics SDKs for
 
 - **Optional Diagnostics sent with support requests:** Kept only as long as needed to investigate the issue and normally no longer than the related support case retention period
 
-Deleting the app removes local on-device data, but it may not automatically remove data stored in your iCloud account or information already contained in support emails you previously sent.
+Deleting the app generally removes its local application data. It does not itself erase iCloud records, previously made exports, device backups, or support emails. Apple backup and restore settings may affect copies of app data and preferences. Review your Apple settings and delete cloud records separately where appropriate.
 
 ***
 
