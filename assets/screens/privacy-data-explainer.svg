@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="1434" viewBox="0 0 660 1434" role="img" aria-labelledby="title desc">
+<title id="title">FamilyFund privacy and data</title><desc id="desc">Financial records stay on your device and, when enabled, in Apple iCloud. Optional product analytics excludes financial and receipt contents. Product illustration, not an app screenshot.</desc>
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#eaf2ff"/><stop offset="1" stop-color="#f7fbff"/></linearGradient></defs>
+<rect width="660" height="1434" rx="42" fill="url(#bg)"/>
+<g font-family="Arial,sans-serif" text-anchor="middle" fill="#12233f">
+<text x="330" y="115" font-size="22" font-weight="700" letter-spacing="3">FAMILYFUND</text>
+<path d="M330 205l65 24v55c0 48-36 78-65 94-29-16-65-46-65-94v-55z" fill="#357e69"/>
+<rect x="306" y="272" width="48" height="40" rx="8" fill="white"/><path d="M315 272v-17a15 15 0 0130 0v17" fill="none" stroke="white" stroke-width="9"/>
+<text x="330" y="454" font-size="38" font-weight="700">Privacy, explained.</text>
+<text x="330" y="535" font-size="26"><tspan x="330">Financial records stay on your</tspan><tspan x="330" dy="40">device and, when enabled,</tspan><tspan x="330" dy="40">in Apple iCloud.</tspan></text>
+<rect x="48" y="730" width="564" height="280" rx="28" fill="white"/>
+<text x="330" y="797" font-size="23" font-weight="700">OPTIONAL PRODUCT ANALYTICS</text>
+<text x="330" y="865" font-size="26"><tspan x="330">Optional product analytics</tspan><tspan x="330" dy="40">excludes financial and</tspan><tspan x="330" dy="40">receipt contents.</tspan></text>
+<text x="330" y="1110" font-size="23" fill="#53677c"><tspan x="330">Analytics requires your consent.</tspan><tspan x="330" dy="38">Manage it in Privacy controls.</tspan></text>
+<text x="330" y="1334" font-size="19" fill="#64748b">Product illustration · not an app screenshot</text>
+</g></svg>
